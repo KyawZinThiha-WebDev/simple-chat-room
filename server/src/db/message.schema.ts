@@ -16,6 +16,9 @@ export class Message {
 
   @Prop({ required: true, trim: true })
   msg: string;
+
+  @Prop({ required: true, default: new Date(), expires: '1h' })
+  expiresAt: Date;
 }
 
 export const MessageSchema = SchemaFactory.createForClass(Message);
